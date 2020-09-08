@@ -1,0 +1,12 @@
+.root {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+.text {
+  color: #fff;
+  line-height: 1;
+  padding-left: 15px;
+}
