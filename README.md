@@ -27,3 +27,9 @@ npm run package-mac
 // 打包linux:依赖下载完成后执行
 npm run package-linux
 ```
+
+## 预览
+
+![首页](https://github.com/beilo/electron-todo/blob/master/images_readme/1.png)
+![侧边栏](https://github.com/beilo/electron-todo/blob/master/images_readme/2.png)
+![设置](https://github.com/beilo/electron-todo/blob/master/images_readme/3.png)
