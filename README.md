@@ -4,7 +4,7 @@
 
 ### 当前只有 mac 版本,win 版本要下载源码自行编译
 
-下载链接:https://pan.baidu.com/s/1MhDKtk4Su3dBt7-UCxrImw 密码:pf22
+链接: https://pan.baidu.com/s/1gXKQ8ACPJnEZf2l5Fs4KBQ 密码: tups
 
 ## 开发 & 构建
 
