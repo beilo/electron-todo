@@ -16,6 +16,7 @@ function createMb() {
       height: 0,
     },
     tray,
+    showDockIcon: true,
   });
   return { mb, tray };
 }

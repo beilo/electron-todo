@@ -17,6 +17,7 @@ import log from 'electron-log';
 import MenuBuilder from './menu';
 import { createMb, mb } from './utils/tray';
 import { createFloatView } from './float.dev';
+import getAssetPath from './utils/asset-path-util';
 
 app.allowRendererProcessReuse = true;
 
@@ -69,7 +70,7 @@ const createWindow = async () => {
     height: 500,
     webPreferences: {
       ...webPreferencesObj(),
-      // devTools: false, //关闭调试工具
+      devTools: false, //关闭调试工具
       enableRemoteModule: true,
     },
   });
@@ -93,9 +94,12 @@ const createWindow = async () => {
 
   mainWindow.on('closed', () => {
     mainWindow = null;
+    floatWindow = null;
+    tray = null;
+    app.quit();
   });
-  const menuBuilder = new MenuBuilder(mainWindow);
-  menuBuilder.buildMenu();
+  // const menuBuilder = new MenuBuilder(mainWindow);
+  // menuBuilder.buildMenu();
 
   // Remove this if your app does not use auto updates
   // eslint-disable-next-line
@@ -105,11 +109,12 @@ ipcMain.on('event-todoTime', (event, arg) => {
   console.log('arg', arg);
   // event.reply('event-todoTime-reply', arg); // 主页面
   floatWindow.webContents.send('event-todoTime-reply', arg);
-  tray.setTitle('11');
 });
 ipcMain.on('event-tray', (event, arg) => {
   console.log('event-tray', String(arg));
-  tray.setTitle(String(arg));
+  if (tray) {
+    tray.setTitle(String(arg));
+  }
 });
 /**
  * Add event listeners...
